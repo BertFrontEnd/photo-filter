@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "mappings": "AIAA,AAAA,IAAI,CAAC;EACH,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "style.scss",
+        "assets/sass/abstract/_constants.scss",
+        "assets/sass/abstract/_mixins.scss",
+        "assets/sass/abstract/_placeholders.scss",
+        "assets/sass/base/_base.scss",
+        "assets/sass/base/_buttons.scss",
+        "assets/sass/base/_ranges.scss",
+        "assets/sass/components/_header.scss",
+        "assets/sass/components/_main.scss",
+        "assets/sass/components/_footer.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
