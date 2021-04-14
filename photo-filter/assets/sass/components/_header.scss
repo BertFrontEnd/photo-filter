@@ -1,0 +1,15 @@
+.header {
+  width: 100%;
+  text-align: center;
+  background: #313940;
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+
+  .header-title {
+    font-size: 3.2rem;
+    line-height: 6rem;
+    font-weight: 300;
+    color: #fff;
+  }
+}

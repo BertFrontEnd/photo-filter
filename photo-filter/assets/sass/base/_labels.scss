@@ -1,0 +1,46 @@
+label {
+  &:not(.btn) {
+    position: relative;
+    display: block;
+    margin-bottom: 40px;
+    margin-right: 140px;
+    font-size: 1.6rem;
+    color: #a2abb3;
+  }
+
+  &:hover {
+    color: #cbd5de;
+
+    output {
+      color: #a2abb3;
+    }
+
+    input[type='range'] {
+      &::-webkit-slider-thumb {
+        background-color: #00c9b7;
+      }
+    }
+  }
+
+  &:active {
+    output {
+      color: #00c9b7;
+      background-color: #74808c;
+    }
+  }
+
+  output {
+    position: absolute;
+    top: 24px;
+    right: -80px;
+    width: 60px;
+    height: 40px;
+    padding-left: 10px;
+    text-align: left;
+    line-height: 40px;
+    border-radius: 2px;
+    background-color: #454c53;
+    border: 1px solid #454c53;
+    @extend %transition;
+  }
+}

@@ -1,0 +1,52 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1140px;
+  min-height: calc(100vh - 110px);
+  margin: 0 auto;
+  padding: 58px 10px 0;
+}
+
+.filters {
+  width: 100%;
+  max-width: 40%;
+  padding-top: 60px;
+  margin-bottom: 40px;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 60%;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 2px;
+  user-select: none;
+
+  > * {
+    margin-right: 10px;
+  }
+
+  .btn-fullscreen {
+    margin-right: 0;
+  }
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  max-height: 520px;
+  max-width: 830px;
+  object-fit: contain;
+  filter: blur(var(--blur, 0px)) invert(var(--invert, 0%))
+    sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
+    hue-rotate(var(--hue, 0deg));
+}

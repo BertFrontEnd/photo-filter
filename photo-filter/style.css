@@ -1,4 +1,342 @@
+:root {
+  --blur: 0px;
+  --invert: 0%;
+  --sepia: 0%;
+  --saturate: 100%;
+  --hue: 0deg;
+}
+
+label output, input[type='range'], input[type='range']::-webkit-slider-thumb, .btn, .footer .footer-container .github, .footer .footer-container .rss .rss-year {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
 html {
   font-size: 10px;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #313940;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a:focus {
+  outline: 0;
+}
+
+label:not(.btn) {
+  position: relative;
+  display: block;
+  margin-bottom: 40px;
+  margin-right: 140px;
+  font-size: 1.6rem;
+  color: #a2abb3;
+}
+
+label:hover {
+  color: #cbd5de;
+}
+
+label:hover output {
+  color: #a2abb3;
+}
+
+label:hover input[type='range']::-webkit-slider-thumb {
+  background-color: #00c9b7;
+}
+
+label:active output {
+  color: #00c9b7;
+  background-color: #74808c;
+}
+
+label output {
+  position: absolute;
+  top: 24px;
+  right: -80px;
+  width: 60px;
+  height: 40px;
+  padding-left: 10px;
+  text-align: left;
+  line-height: 40px;
+  border-radius: 2px;
+  background-color: #454c53;
+  border: 1px solid #454c53;
+}
+
+input[type='range'] {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-top: 22px;
+  outline: none;
+  border-radius: 0.25rem;
+  background-color: #a2abb3;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #313940;
+  border: 3px solid #a2abb3;
+  -webkit-appearance: none;
+          appearance: none;
+  cursor: pointer;
+}
+
+.btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 120px;
+  height: 40px;
+  padding: 0 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: 2px;
+  background-color: #454c53;
+  cursor: pointer;
+}
+
+.btn:not(.btn-active):hover {
+  background-color: #515961;
+}
+
+.btn:active {
+  background-color: #00c9b7;
+}
+
+.btn.btn-active {
+  background-color: #00b4a4;
+}
+
+.btn.btn-active:hover {
+  background-color: #00c9b7;
+}
+
+.btn.btn-load {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.btn.btn-load .btn-load-input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn.btn-fullscreen {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  max-width: 40px;
+  background-size: 25%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.btn.open-fullscreen {
+  background-image: url("./assets/fullscreen/open.svg");
+}
+
+.btn.close-fullscreen {
+  display: none;
+  background-image: url("./assets/fullscreen/close.svg");
+  background-color: #00b4a4;
+}
+
+.btn.close-fullscreen:hover {
+  background-color: #00c9b7;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  background: #313940;
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+}
+
+.header .header-title {
+  font-size: 3.2rem;
+  line-height: 6rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  max-width: 1140px;
+  min-height: calc(100vh - 110px);
+  margin: 0 auto;
+  padding: 58px 10px 0;
+}
+
+.filters {
+  width: 100%;
+  max-width: 40%;
+  padding-top: 60px;
+  margin-bottom: 40px;
+}
+
+.editor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  max-width: 60%;
+}
+
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+  padding: 2px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn-container > * {
+  margin-right: 10px;
+}
+
+.btn-container .btn-fullscreen {
+  margin-right: 0;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  max-height: 520px;
+  max-width: 830px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-filter: blur(var(--blur, 0px)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
+          filter: blur(var(--blur, 0px)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
+}
+
+img {
+  filter: alpha(var(--invert));
+}
+
+.footer {
+  border-top: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+  background-color: #313940;
+}
+
+.footer .footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer .footer-container .github {
+  display: block;
+  width: 120px;
+  height: 45px;
+  padding-left: 45px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  line-height: 4.6rem;
+  color: #cbd5de;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: url("./assets/network/github.svg");
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.footer .footer-container .github:hover {
+  color: #fff;
+}
+
+.footer .footer-container .rss {
+  position: relative;
+  display: block;
+  width: 86px;
+  height: 32px;
+  padding-right: 111px;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("./assets/network/rss-school.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.footer .footer-container .rss:hover .rss-year {
+  right: -5px;
+  letter-spacing: 0;
+}
+
+.footer .footer-container .rss .rss-year {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2.1rem;
+  letter-spacing: -0.2rem;
+  font-weight: bold;
+  line-height: 0.9;
+  color: #cbd5de;
 }
 /*# sourceMappingURL=style.css.map */

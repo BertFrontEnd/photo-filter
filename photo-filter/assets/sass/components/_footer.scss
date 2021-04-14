@@ -1,0 +1,71 @@
+.footer {
+  border-top: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+  background-color: #313940;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    .github {
+      display: block;
+      width: 120px;
+      height: 45px;
+      padding-left: 45px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.6rem;
+
+      line-height: 4.6rem;
+      color: #cbd5de;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: url('./assets/network/github.svg');
+      background-size: 35px;
+      background-repeat: no-repeat;
+      background-position: left center;
+      @extend %transition;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .rss {
+      position: relative;
+      display: block;
+      width: 86px;
+      height: 32px;
+      padding-right: 111px;
+      font-family: 'Open Sans', sans-serif;
+      background-image: url('./assets/network/rss-school.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
+
+      &:hover {
+        .rss-year {
+          right: -5px;
+          letter-spacing: 0;
+        }
+      }
+
+      .rss-year {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 2.1rem;
+        letter-spacing: -0.2rem;
+        font-weight: bold;
+        line-height: 0.9;
+        color: #cbd5de;
+        @extend %transition;
+      }
+    }
+  }
+}
