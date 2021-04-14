@@ -259,8 +259,8 @@ img {
   max-width: 830px;
   -o-object-fit: contain;
      object-fit: contain;
-  -webkit-filter: blur(var(--blur, 0px)) red sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
-          filter: blur(var(--blur, 0px)) red sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
+  -webkit-filter: blur(var(--blur, 0px)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
+          filter: blur(var(--blur, 0px)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
 }
 
 .footer {
