@@ -12,7 +12,7 @@
 .filters {
   width: 100%;
   max-width: 40%;
-  padding-top: 60px;
+  padding-top: 50px;
   margin-bottom: 40px;
 }
 
@@ -45,8 +45,56 @@ img {
   width: 100%;
   max-height: 520px;
   max-width: 830px;
+  margin: 0 auto;
   object-fit: contain;
   filter: blur(var(--blur, 0px)) Invert(var(--invert, 0%))
     sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
     hue-rotate(var(--hue, 0deg));
+}
+
+@media (max-width: $media-width-tablet) {
+  .main {
+    flex-wrap: wrap;
+    padding-top: 40px;
+  }
+
+  .filters,
+  .editor {
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .btn-container {
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    > * {
+      margin: 10px;
+    }
+
+    .btn-fullscreen {
+      margin-right: 10px;
+    }
+  }
+
+  img {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: $media-width-phone) {
+  .btn-container {
+    > * {
+      margin: 3px;
+    }
+
+    .btn-fullscreen {
+      margin-right: 3px;
+    }
+  }
+
+  img {
+    margin-bottom: 20px;
+  }
 }

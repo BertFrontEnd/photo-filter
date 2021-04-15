@@ -44,3 +44,12 @@ label {
     @extend %transition;
   }
 }
+
+@media (max-width: $media-width-tablet) {
+  label {
+    &:not(.btn) {
+      margin-bottom: 35px;
+      margin-right: 80px;
+    }
+  }
+}

@@ -51,8 +51,6 @@
   }
 
   &.btn-fullscreen {
-    flex-shrink: 0;
-    max-width: 40px;
     background-size: 25%;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,5 +69,21 @@
     &:hover {
       background-color: #00c9b7;
     }
+  }
+}
+
+@media (max-width: $media-width-tablet) {
+  .btn {
+    min-width: 45%;
+
+    &.btn-fullscreen {
+      background-size: 5.5%;
+    }
+  }
+}
+
+@media (max-width: $media-width-phone) {
+  .btn {
+    min-width: 145px;
   }
 }
