@@ -60,6 +60,54 @@ for (let value of labelFields) {
   });
 }
 
+// Set Image
+
+let counter = 0;
+
+import { setImage } from './assets/module/images.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  setImage(counter);
+});
+
+const nextButton = document.querySelector('.btn-next');
+
+nextButton.addEventListener('click', () => {
+  counter++;
+  setImage(counter);
+});
+
+// Set Filters
+
+import { getFilter } from './assets/module/filters.js';
+
+const imgFrame = document.querySelector('img');
+const blurFilter = document.querySelector('[name="blur"]');
+const invertFilter = document.querySelector('[name="invert"]');
+const sepiaFilter = document.querySelector('[name="sepia"]');
+const saturateFilter = document.querySelector('[name="saturate"]');
+const hueFilter = document.querySelector('[name="hue"]');
+
+blurFilter.addEventListener('input', () => {
+  imgFrame.style.setProperty('--blur', getFilter(blurFilter));
+});
+
+invertFilter.addEventListener('input', () => {
+  imgFrame.style.setProperty('--invert', getFilter(invertFilter));
+});
+
+sepiaFilter.addEventListener('input', () => {
+  imgFrame.style.setProperty('--sepia', getFilter(sepiaFilter));
+});
+
+saturateFilter.addEventListener('input', () => {
+  imgFrame.style.setProperty('--saturate', getFilter(saturateFilter));
+});
+
+hueFilter.addEventListener('input', () => {
+  imgFrame.style.setProperty('--hue', getFilter(hueFilter));
+});
+
 // Reset
 
 import { pressReset } from './assets/module/reset.js';
@@ -69,5 +117,18 @@ const resetButton = document.querySelector('.btn-reset');
 resetButton.addEventListener('click', () => {
   for (let value of labelFields) {
     pressReset(value);
+    imgFrame.style.removeProperty('--blur');
+    imgFrame.style.removeProperty('--invert');
+    imgFrame.style.removeProperty('--sepia');
+    imgFrame.style.removeProperty('--saturate');
+    imgFrame.style.removeProperty('--hue');
   }
 });
+
+// Load Image
+
+import { onFileSelected } from './assets/module/reader.js';
+
+const inputFile = document.querySelector('.btn-load-input');
+
+inputFile.addEventListener('change', onFileSelected);

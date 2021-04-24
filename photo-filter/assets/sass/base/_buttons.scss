@@ -20,9 +20,9 @@
     }
   }
 
-  &:active {
+  /* &:active {
     background-color: #00c9b7;
-  }
+  } */
 
   &.btn-active {
     background-color: #00b4a4;
@@ -51,7 +51,7 @@
   }
 
   &.btn-fullscreen {
-    background-size: 25%;
+    background-size: 30px;
     background-position: center;
     background-repeat: no-repeat;
     transform-origin: center;
@@ -75,10 +75,6 @@
 @media (max-width: $media-width-tablet) {
   .btn {
     min-width: 45%;
-
-    &.btn-fullscreen {
-      background-size: 5.5%;
-    }
   }
 }
 

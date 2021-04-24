@@ -6,7 +6,13 @@ const addActiveButton = (node, e) => {
     });
 
     e.target.classList.add('btn-active');
-    e.target.setAttribute('disabled', 'disabled');
+
+    if (
+      !e.target.classList.contains('btn-load') &&
+      !e.target.classList.contains('btn-load-input')
+    ) {
+      e.target.setAttribute('disabled', 'disabled');
+    }
 
     node.forEach((el) => {
       setTimeout(() => {
