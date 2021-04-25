@@ -60,14 +60,16 @@ for (let value of labelFields) {
   });
 }
 
-// Set Image
+// Set Image, Save Image
 
 let counter = 0;
 
 import { setImage } from './assets/module/images.js';
+import { downloadImage } from './assets/module/save.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   setImage(counter);
+  downloadImage(imgFrame);
 });
 
 const nextButton = document.querySelector('.btn-next');
@@ -131,4 +133,6 @@ import { onFileSelected } from './assets/module/reader.js';
 
 const inputFile = document.querySelector('.btn-load-input');
 
-inputFile.addEventListener('change', onFileSelected);
+inputFile.addEventListener('change', (e) => {
+  onFileSelected(e, imgFrame);
+});
