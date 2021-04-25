@@ -16,7 +16,7 @@ const setImage = (count) => {
   let folder = getTime();
   let imageNumber = count % 20;
   let img = document.querySelector('img');
-  let src = `./assets/images/${folder}/${timeOfDayObject[folder][imageNumber]}.jpg`;
+  let src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${folder}/${timeOfDayObject[folder][imageNumber]}.jpg`;
   img.src = src;
 };
 

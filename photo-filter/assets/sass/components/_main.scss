@@ -40,26 +40,16 @@
   }
 }
 
-.img-container {
-  width: 100%;
+img {
   height: 100%;
-  max-width: 830px;
-  max-height: 520px;
+  width: 100%;
+  max-width: 672px;
+  max-height: 420px;
   margin: 0 auto;
-  overflow: hidden;
-  background-image: url(./assets/images/overlay.png);
-  background-color: transparent;
-  background-size: cover;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    filter: blur(var(--blur, 0px)) Invert(var(--invert, 0%))
-      sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
-      hue-rotate(var(--hue, 0deg));
-    /* @extend %transition; */
-  }
+  object-fit: cover;
+  filter: blur(var(--blur, 0px)) Invert(var(--invert, 0%))
+    sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
+    hue-rotate(var(--hue, 0deg));
 }
 
 @media (max-width: $media-width-tablet) {

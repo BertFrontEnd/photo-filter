@@ -17,7 +17,7 @@ const getTime = () => {
       break;
     }
     case hour >= 0 && hour < 6: {
-      time = 'night ';
+      time = 'night';
       break;
     }
   }
