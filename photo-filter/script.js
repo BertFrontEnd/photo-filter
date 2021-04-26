@@ -123,7 +123,7 @@ resetButton.addEventListener('click', () => {
     imgFrame.style.removeProperty('--invert');
     imgFrame.style.removeProperty('--sepia');
     imgFrame.style.removeProperty('--saturate');
-    imgFrame.style.removeProperty('--hue');
+    imgFrame.style.removeProperty('--hue-rotate');
   }
 });
 
