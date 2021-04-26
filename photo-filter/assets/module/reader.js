@@ -15,19 +15,3 @@ const onFileSelected = (e, img) => {
 };
 
 export { onFileSelected };
-
-/* const onFileSelected = (e, img, element) => {
-  const selectedFile = element.files[0];
-  const reader = new FileReader();
-
-  img.title = selectedFile.name;
-
-  reader.onload = () => {
-    img.src = reader.result;
-  };
-
-  reader.readAsDataURL(selectedFile);
-  e.target.value = '';
-};
-
-export { onFileSelected }; */

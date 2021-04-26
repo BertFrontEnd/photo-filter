@@ -107,7 +107,7 @@ saturateFilter.addEventListener('input', () => {
 });
 
 hueFilter.addEventListener('input', () => {
-  imgFrame.style.setProperty('--hue', getFilter(hueFilter));
+  imgFrame.style.setProperty('--hue-rotate', getFilter(hueFilter));
 });
 
 // Reset

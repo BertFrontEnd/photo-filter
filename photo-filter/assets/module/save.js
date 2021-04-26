@@ -6,15 +6,44 @@ const downloadImage = (image) => {
     let filters = '';
     let imageFilters = image.style.cssText;
 
-    /* if (imageFilters.slice(0, 6) === '--blur') {
-      let newBlur = +imageFilters.slice(7, 9);
-      imageFilters =
-        imageFilters.slice(0, 7) + newBlur * 2 + imageFilters.slice(9);
-      console.log(imageFilters);
-      return imageFilters;
-    }
- */
-    console.log(imageFilters);
+    /* console.log(imageFilters); */
+
+    const multiplyBlur = () => {
+      let arr = imageFilters.split(';');
+
+      let arrBlur = arr.map((elem) => {
+        if (elem.includes('--blur:') && elem.length === 11) {
+          let newBlur = +elem.slice(7, 9);
+          return elem.slice(0, 7) + newBlur * 2 + elem.slice(9);
+        }
+
+        if (elem.includes('--blur:') && elem.length === 10) {
+          let newBlur = +elem.slice(7, 8);
+          return elem.slice(0, 7) + newBlur * 2 + elem.slice(8);
+        }
+      });
+
+      /* console.log(arrBlur.join('') + ';'); */
+      return arrBlur.join('') + ';';
+    };
+
+    const getBlur = () => {
+      let arr = imageFilters.split(';');
+      let arrBlur = arr.map((elem) => {
+        if (elem.includes('blur:')) {
+          return elem;
+        }
+      });
+
+      /* console.log(arrBlur.join('') + ';'); */
+      return arrBlur.join('') + ';';
+    };
+
+    let rep = getBlur();
+
+    imageFilters = imageFilters.replace(rep, multiplyBlur());
+
+    /* console.log(imageFilters); */
 
     for (let i = 0; i < imageFilters.length; i++) {
       if (imageFilters[i] === '-' && imageFilters[i - 1] !== 'e') {
@@ -33,6 +62,8 @@ const downloadImage = (image) => {
         }
       }
     }
+
+    /* console.log(filters); */
     return filters;
   }
 
@@ -41,6 +72,7 @@ const downloadImage = (image) => {
     canvas.width = img.naturalWidth;
     canvas.height = img.naturalHeight;
     newCanvas.filter = getFilter();
+    /* console.log(newCanvas.filter); */
     newCanvas.drawImage(img, 0, 0);
   }
 

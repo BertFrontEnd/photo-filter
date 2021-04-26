@@ -49,7 +49,7 @@ img {
   object-fit: cover;
   filter: blur(var(--blur, 0px)) Invert(var(--invert, 0%))
     sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
-    hue-rotate(var(--hue, 0deg));
+    hue-rotate(var(--hue-rotate, 0deg));
 }
 
 @media (max-width: $media-width-tablet) {

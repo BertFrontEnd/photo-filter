@@ -3,7 +3,7 @@
   --invert: 0%;
   --sepia: 0%;
   --saturate: 100%;
-  --hue: 0deg;
+  --hue-rotate: 0deg;
 }
 
 label output, input[type='range'], input[type='range']::-webkit-slider-thumb, .btn, .footer .footer-container .github, .footer .footer-container .rss .rss-year {
@@ -284,8 +284,8 @@ img {
   margin: 0 auto;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-filter: blur(var(--blur, 0px)) Invert(var(--invert, 0%)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
-          filter: blur(var(--blur, 0px)) Invert(var(--invert, 0%)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
+  -webkit-filter: blur(var(--blur, 0px)) Invert(var(--invert, 0%)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue-rotate, 0deg));
+          filter: blur(var(--blur, 0px)) Invert(var(--invert, 0%)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue-rotate, 0deg));
 }
 
 @media (max-width: 1024px) {
