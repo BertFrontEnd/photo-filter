@@ -68,7 +68,7 @@ import { setImage } from './assets/module/images.js';
 import { downloadImage } from './assets/module/save.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  setImage(counter);
+  /* setImage(counter); */
   downloadImage(imgFrame);
 });
 
