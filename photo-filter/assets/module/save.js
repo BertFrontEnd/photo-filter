@@ -2,7 +2,7 @@ const downloadImage = (image) => {
   const canvas = document.querySelector('canvas');
   const btnSaveImage = document.querySelector('.btn-save');
 
-  function getFilter() {
+  function getFilter(can_width, can_height) {
     let filters = '';
     let imageFilters = image.style.cssText;
 
@@ -14,12 +14,26 @@ const downloadImage = (image) => {
       let arrBlur = arr.map((elem) => {
         if (elem.includes('--blur:') && elem.length === 11) {
           let newBlur = +elem.slice(7, 9);
-          return elem.slice(0, 7) + newBlur * 2 + elem.slice(9);
+          return (
+            elem.slice(0, 7) +
+            newBlur *
+              Math.sqrt(
+                (can_width * can_height) / (image.width * image.height),
+              ) +
+            elem.slice(9)
+          );
         }
 
         if (elem.includes('--blur:') && elem.length === 10) {
           let newBlur = +elem.slice(7, 8);
-          return elem.slice(0, 7) + newBlur * 2 + elem.slice(8);
+          return (
+            elem.slice(0, 7) +
+            newBlur *
+              Math.sqrt(
+                (can_width * can_height) / (image.width * image.height),
+              ) +
+            elem.slice(8)
+          );
         }
       });
 
@@ -71,7 +85,7 @@ const downloadImage = (image) => {
     const newCanvas = canvas.getContext('2d');
     canvas.width = img.naturalWidth;
     canvas.height = img.naturalHeight;
-    newCanvas.filter = getFilter();
+    newCanvas.filter = getFilter(canvas.width, canvas.height);
     /* console.log(newCanvas.filter); */
     newCanvas.drawImage(img, 0, 0);
   }
