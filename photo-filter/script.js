@@ -141,3 +141,13 @@ nextButton.addEventListener('click', () => {
   counter++;
   setImage(counter);
 });
+
+// Copy Code
+
+import { copyToClipboard } from './assets/module/copy.js';
+
+const btnCopy = document.querySelector('.btn-copy');
+
+btnCopy.addEventListener('click', () => copyToClipboard());
+
+alert('Hey! Please postpone the check for a day or two!');
