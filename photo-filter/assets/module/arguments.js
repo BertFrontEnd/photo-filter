@@ -10,7 +10,6 @@ const getArgumentsValue = () => {
   let outArguments = document.querySelector('.filter-arguments');
   outArguments.value = `blur(${objectOfValue.blur}px) invert(${objectOfValue.invert}%) sepia(${objectOfValue.sepia}%) saturate(${objectOfValue.saturate}%) hue-rotate(${objectOfValue.hue}deg)`;
 
-  console.log(objectOfValue);
   return objectOfValue;
 };
 
