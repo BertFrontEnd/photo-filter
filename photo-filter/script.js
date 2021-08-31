@@ -60,9 +60,10 @@ for (let value of labelFields) {
   });
 }
 
-// Set Filters
+// Set Filters, Get Argument Value
 
 import { getFilter } from './assets/module/filters.js';
+import { getArgumentsValue } from './assets/module/arguments.js';
 
 const imgFrame = document.querySelector('img');
 const blurFilter = document.querySelector('[name="blur"]');
@@ -73,22 +74,27 @@ const hueFilter = document.querySelector('[name="hue"]');
 
 blurFilter.addEventListener('input', () => {
   imgFrame.style.setProperty('--blur', getFilter(blurFilter));
+  getArgumentsValue();
 });
 
 invertFilter.addEventListener('input', () => {
   imgFrame.style.setProperty('--invert', getFilter(invertFilter));
+  getArgumentsValue();
 });
 
 sepiaFilter.addEventListener('input', () => {
   imgFrame.style.setProperty('--sepia', getFilter(sepiaFilter));
+  getArgumentsValue();
 });
 
 saturateFilter.addEventListener('input', () => {
   imgFrame.style.setProperty('--saturate', getFilter(saturateFilter));
+  getArgumentsValue();
 });
 
 hueFilter.addEventListener('input', () => {
   imgFrame.style.setProperty('--hue-rotate', getFilter(hueFilter));
+  getArgumentsValue();
 });
 
 // Reset
@@ -149,5 +155,3 @@ import { copyToClipboard } from './assets/module/copy.js';
 const btnCopy = document.querySelector('.btn-copy');
 
 btnCopy.addEventListener('click', () => copyToClipboard());
-
-alert('Hey! Please postpone the check for a day or two!');
