@@ -155,3 +155,9 @@ import { copyToClipboard } from './assets/module/copy.js';
 const btnCopy = document.querySelector('.btn-copy');
 
 btnCopy.addEventListener('click', () => copyToClipboard());
+
+// Set Console Massage
+
+import { setConsoleMassage } from './assets/module/console.js';
+
+window.addEventListener('load', setConsoleMassage);

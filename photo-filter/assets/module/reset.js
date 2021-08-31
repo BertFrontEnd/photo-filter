@@ -10,6 +10,9 @@ const pressReset = (element) => {
     firstSubElem.value = 100;
     secondSubElem.textContent = '100';
   }
+
+  document.querySelector('.filter-arguments').value =
+    'blur(0px) invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg)';
 };
 
 export { pressReset };
